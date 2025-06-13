@@ -1,0 +1,212 @@
+{
+    "college_time": {
+        "startTime": "09:30",
+        "endTime": "16:30"
+    },
+    "break_": [
+        {
+            "day": "ALL_DAYS",
+            "startTime": "13:00",
+            "endTime": "14:00"
+        }
+    ],
+    "rooms": [
+        "R1"
+    ],
+    "subjects": [
+        {
+            "name": "Discrete Mathematics",
+            "duration": 50,
+            "time": 50,
+            "no_of_classes_per_week": 4,
+            "faculty": [
+                {
+                    "id": "F1",
+                    "name": "Dr. Anil Sharma",
+                    "availability": [
+                        {
+                            "day": "MONDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "TUESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "WEDNESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "THURSDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "FRIDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "SATURDAY",
+                            "startTime": "09:30",
+                            "endTime": "14:50"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Automata Theory and Compiler Design",
+            "duration": 50,
+            "time": 50,
+            "no_of_classes_per_week": 5,
+            "faculty": [
+                {
+                    "id": "F1",
+                    "name": "Dr. Anil Sharma",
+                    "availability": [
+                        {
+                            "day": "MONDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "TUESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "WEDNESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "THURSDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "FRIDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "SATURDAY",
+                            "startTime": "09:30",
+                            "endTime": "14:50"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Database Management Systems",
+            "duration": 50,
+            "time": 50,
+            "no_of_classes_per_week": 4,
+            "faculty": [
+                {
+                    "id": "F3",
+                    "name": "Dr. Sameer Patel",
+                    "availability": [
+                        {
+                            "day": "MONDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "WEDNESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "THURSDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Introduction to Artificial Intelligence",
+            "duration": 50,
+            "time": 50,
+            "no_of_classes_per_week": 4,
+            "faculty": [
+                {
+                    "id": "F4",
+                    "name": "Ms. Neha Gupta",
+                    "availability": [
+                        {
+                            "day": "MONDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "WEDNESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "THURSDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "FRIDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Object-Oriented Programming through Java",
+            "duration": 100,
+            "time": 100,
+            "no_of_classes_per_week": 3,
+            "faculty": [
+                {
+                    "id": "F5",
+                    "name": "Mr. Vikram Singh",
+                    "availability": [
+                        {
+                            "day": "FRIDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"
+                        },
+                        {
+                            "day": "SATURDAY",
+                            "startTime": "09:30",
+                            "endTime": "14:50"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Database Management Systems Lab",
+            "duration": 100,
+            "time": 100,
+            "no_of_classes_per_week": 1,
+            "faculty": [
+                {
+                    "id": "F6",
+                    "name": "Ms. Priya Menon",
+                    "availability": [
+                        {
+                            "day": "WEDNESDAY",
+                            "startTime": "09:30",
+                            "endTime": "13:00"  
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

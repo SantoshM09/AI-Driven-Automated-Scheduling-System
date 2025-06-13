@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 40%, 6%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 13%, 65%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 40%, 6%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 40%, 6%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(214, 84%, 56%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 98%);
+  --secondary-foreground: hsl(222, 47%, 11%);
+  --accent: hsl(210, 40%, 98%);
+  --accent-foreground: hsl(222, 47%, 11%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(215, 20%, 65%);
+  --radius: 0.5rem;
+  --chart-1: hsl(214, 84%, 56%);
+  --chart-2: hsl(142, 76%, 36%);
+  --chart-3: hsl(45, 93%, 47%);
+  --chart-4: hsl(0, 85%, 60%);
+  --chart-5: hsl(270, 95%, 75%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(215, 27%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(215, 27%, 17%);
+  --input: hsl(215, 27%, 17%);
+  --primary: hsl(214, 84%, 56%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(215, 27%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(215, 27%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(215, 20%, 65%);
+  --chart-1: hsl(214, 84%, 56%);
+  --chart-2: hsl(142, 76%, 36%);
+  --chart-3: hsl(45, 93%, 47%);
+  --chart-4: hsl(0, 85%, 60%);
+  --chart-5: hsl(270, 95%, 75%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the scheduler application */
+.time-slot {
+  height: 60px;
+}
+
+.subject-block {
+  min-height: 50px;
+  transition: all 0.2s ease;
+}
+
+.subject-block:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.break-period {
+  background: linear-gradient(45deg, hsl(45, 93%, 89%) 25%, transparent 25%, transparent 50%, hsl(45, 93%, 89%) 50%, hsl(45, 93%, 89%) 75%, transparent 75%);
+  background-size: 20px 20px;
+}
+
+.loading-skeleton {
+  background: linear-gradient(90deg, hsl(210, 40%, 94%) 25%, hsl(210, 40%, 88%) 50%, hsl(210, 40%, 94%) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.utilization-high {
+  background: hsl(142, 76%, 36%);
+}
+
+.utilization-medium {
+  background: hsl(45, 93%, 47%);
+}
+
+.utilization-low {
+  background: hsl(0, 85%, 60%);
+}
+
+/* Ensure proper scrolling for timetable */
+.timetable-container {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(215, 20%, 65%) hsl(210, 40%, 98%);
+}
+
+.timetable-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timetable-container::-webkit-scrollbar-track {
+  background: hsl(210, 40%, 98%);
+  border-radius: 3px;
+}
+
+.timetable-container::-webkit-scrollbar-thumb {
+  background: hsl(215, 20%, 65%);
+  border-radius: 3px;
+}
+
+.timetable-container::-webkit-scrollbar-thumb:hover {
+  background: hsl(215, 20%, 55%);
+}
+
+/* Animation for cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive grid improvements */
+@media (max-width: 768px) {
+  .time-slot {
+    height: auto;
+    min-height: 50px;
+  }
+  
+  .subject-block {
+    min-height: 40px;
+    padding: 0.5rem;
+  }
+  
+  .subject-block p {
+    font-size: 0.75rem;
+  }
+}
