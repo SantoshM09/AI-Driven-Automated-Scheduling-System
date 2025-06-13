@@ -1,0 +1,184 @@
+AI-Driven Room Scheduler System (Frontend + Backend)
+
+🧱 Tech Stack
+Frontend: Next.js 14+ (App Router), React, Tailwind CSS, shadcn/ui, Lucide Icons
+
+Backend: Next.js API routes (or Node.js-like logic), JSON-based storage (mock DB), optional Prisma + SQLite
+
+Extras: Framer Motion for subtle animations, Zustand or Context for state (optional)
+
+📦 Main Objective
+Build a full-stack web application to input, store, display, and analyze class scheduling data for a college. The application will:
+
+Accept a structured JSON input defining room availability, subject durations, faculty schedules, etc.
+
+Display weekly class timetables room-wise and faculty-wise.
+
+Highlight breaks, scheduling conflicts, and AI-driven usage insights (like utilization %).
+
+Allow users to upload or edit schedules.
+
+🧾 Input Data Structure (JSON Example)
+Use this format for uploading or storing scheduling data:
+
+json
+Copy
+Edit
+{
+  "college_time": {
+    "startTime": "09:30",
+    "endTime": "16:30"
+  },
+  "break_": [
+    {
+      "day": "ALL_DAYS",
+      "startTime": "13:00",
+      "endTime": "14:00"
+    }
+  ],
+  "rooms": ["R1"],
+  "subjects": [
+    {
+      "name": "Discrete Mathematics",
+      "duration": 50,
+      "no_of_classes_per_week": 4,
+      "faculty": [
+        {
+          "id": "F1",
+          "name": "Dr. Anil Sharma",
+          "availability": [
+            { "day": "MONDAY", "startTime": "09:30", "endTime": "13:00" },
+            { "day": "TUESDAY", "startTime": "09:30", "endTime": "13:00" }
+          ]
+        }
+      ]
+    }
+    // ... other subjects
+  ]
+}
+🎨 Frontend UI Pages and Components
+1. Home Page
+Grid layout showing rooms (R1, R2, etc.)
+
+Each room links to detailed schedule
+
+Button to "Upload Schedule JSON"
+
+2. Room Schedule View
+Weekly timetable (Mon–Sat), showing:
+
+Time axis (e.g., 09:30 to 16:30)
+
+Break periods shaded
+
+Subject blocks showing subject name + faculty
+
+Use Card, Tabs, Badge, ScrollArea, etc.
+
+3. Faculty Schedule View
+Select a faculty (dropdown or search)
+
+View weekly schedule for that faculty
+
+Highlight underbooked/overbooked faculty
+
+4. Upload/Import JSON Page
+Form to upload the scheduler JSON
+
+POST it to /api/scheduler/upload
+
+Show success/error message
+
+Store in mock DB (JSON file or memory)
+
+5. Admin Panel (Optional)
+Add/Edit Rooms, Faculty, Subjects
+
+Validate overlapping schedules
+
+View utilization rate (Progress bar)
+
+⚙️ Backend Endpoints
+Use Next.js API routes or route handlers in app/api/scheduler.
+
+✅ POST /api/scheduler/upload
+Input: Full JSON (as above)
+
+Stores data in a local JSON file or memory store
+
+✅ GET /api/scheduler
+Returns all schedule data
+
+✅ GET /api/scheduler/rooms/:id
+Returns schedule for one room
+
+✅ GET /api/scheduler/faculty/:id
+Returns schedule for one faculty
+
+✅ GET /api/scheduler/insights
+Returns:
+
+Room utilization %
+
+Conflict detection
+
+AI suggestions
+
+📊 AI Insights to Display (on Room/Faculty Pages)
+Utilization Rate: Classes scheduled ÷ Available time blocks
+
+Peak Usage Time: Most frequently booked hours
+
+Suggestions:
+
+“Shift classes from 11–1 to 2–4 to reduce peak load”
+
+“Faculty F5 is underutilized on Thursday”
+
+Display insights using Progress, Badge, and Card components
+
+🔧 Components to Use from shadcn/ui
+Card, CardHeader, CardContent
+
+Tabs, TabsList, TabsTrigger, TabsContent
+
+ScrollArea, Dialog, Progress, Badge
+
+Icons from lucide-react like Clock, User, Book, Calendar
+
+📁 File/Folder Structure Suggestion
+bash
+Copy
+Edit
+/app
+  /page.tsx               ← Homepage
+  /room/[id]/page.tsx     ← Room schedule page
+  /faculty/[id]/page.tsx  ← Faculty schedule page
+  /upload/page.tsx        ← Upload JSON page
+
+/app/api/scheduler
+  /route.ts               ← GET & POST schedule
+  /rooms/[id]/route.ts    ← Get room-wise data
+  /faculty/[id]/route.ts  ← Get faculty-wise data
+
+/components
+  RoomTimetable.tsx
+  FacultyTimetable.tsx
+  UploadForm.tsx
+  InsightCard.tsx
+  TimeGrid.tsx
+🔁 Features to Support (MVP)
+✅ Upload a scheduling JSON
+
+✅ View room-wise timetable
+
+✅ View faculty-wise timetable
+
+✅ Show breaks and blocked time
+
+✅ Basic AI Insights per room/faculty
+
+✅ Responsive grid design
+
+✅ Save and fetch via backend endpoints
+
